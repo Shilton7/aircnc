@@ -1,4 +1,5 @@
 const express = require('express')
+const SessionController = require('./controllers/SessionController')
 
 const routes = express.Router();
 
@@ -6,9 +7,7 @@ const routes = express.Router();
 // parametros = usar params
 // body = req.body
 
-routes.get('/users', (req, res) => {
-    return res.json({ nome: req.query.nome })
-})
+routes.post('/sessions', SessionController.store)
 
 
 
