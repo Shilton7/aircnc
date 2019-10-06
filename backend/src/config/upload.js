@@ -7,7 +7,8 @@ module.exports = {
         filename: (req, file, cb) => {
             const extension = path.extname(file.originalname)
             const name = path.basename(file.originalname, extension)
-            
+            //const name = path.basename(file.originalname, extension).replace(" ", "-");
+
             cb(null, `${name}-${Date.now()}${extension}`)
         }
     })
